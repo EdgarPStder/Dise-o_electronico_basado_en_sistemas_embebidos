@@ -35,7 +35,7 @@ void setup() {
     servo.write(0);
     Serial.println("Servo en posición 0° — iniciando barrido automático");
 }
-
+//
 void loop() {
     unsigned long ahora = millis();
 
@@ -57,9 +57,6 @@ void loop() {
     // ── Barrido automático del servo ─────────────────────────
     if (ahora - lastServo >= INTERVALO_SERVO) {
         lastServo = ahora;
-
-        servo.write(servoPos);
-        Serial.printf("[SERVO] %d°\n", servoPos);
 
         servoPos += servoDir;
 

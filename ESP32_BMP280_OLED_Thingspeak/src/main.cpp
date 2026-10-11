@@ -6,6 +6,7 @@
 #include <Adafruit_BMP280.h>
 #include <DHT.h>
 #include "ThingSpeak.h"
+#include "secrets.h"
 
 /*ADVERTENCIA:
   Utiliza una fuente adicional de 3.3v para alimentar los sensores, al utilizar WiFi la ESP32 tiene picos de 
@@ -13,11 +14,11 @@
   Solo asegurate de conectar el GND de la ESP32 al GND de la fuente de 3.3v*/
 
 // --- CONFIGURACIÓN ---
-// --- CONFIGURACIÓN ---
-const char* SSID = "UAM-ROBOTICA";
-const char* PASS = "m4nt32024uat";
-unsigned long CHANNEL_ID = 3284944;
-const char* WRITE_API_KEY = "JOLB193MIUOZ402S";
+// Credenciales en src/secrets.h (copia src/secrets.example.h)
+const char* SSID = SECRET_SSID;
+const char* PASS = SECRET_PASS;
+unsigned long CHANNEL_ID = SECRET_CH_ID;
+const char* WRITE_API_KEY = SECRET_WRITE_APIKEY;
 
 #define DHTPIN 18       // Pin de datos del DHT22
 #define DHTTYPE DHT22  
